@@ -5,14 +5,13 @@ public class Position {
     private int y;
     private static final double EPSILON = 000.1;
 
-    public Position() {
-        this.x = 0;
-        this.y = 0;
-    }
-
     public Position(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    public Position() {
+        this(0, 0);
     }
 
     public boolean isEquivalent(Position p) {
