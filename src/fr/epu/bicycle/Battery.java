@@ -2,11 +2,15 @@ package fr.epu.bicycle;
 
 public class Battery {
     private int charge;
-    private int maxCharge;
+    private final int maxCharge;
 
     public Battery(int maxCharge) {
         this.charge = 0;
-        this.maxCharge = maxCharge;
+        if (maxCharge > 0) {
+            this.maxCharge = maxCharge;
+        } else {
+            throw new IllegalArgumentException("input must be a strictly positive integer");
+        }
     }
 
     public int getCharge() {
@@ -14,7 +18,12 @@ public class Battery {
     }
 
     public void charge(int chargeToAdd) {
+        if (chargeToAdd < 0) {
+            throw new IllegalArgumentException("input must be a positive integer");
+        }
+
         this.charge += chargeToAdd;
+
         if (this.charge > maxCharge) {
             this.charge = maxCharge;
         }
