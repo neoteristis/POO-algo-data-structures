@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayName("GPS Test")
+@DisplayName("GPS Tests")
 class GPSTest {
-    GPS gps;
+    private GPS gps;
 
     @BeforeEach()
     void beforeEach() {
@@ -18,10 +18,10 @@ class GPSTest {
 
     @Nested
     @DisplayName("Tests for the GPS object")
-    class GPSObjectTest {
+    class GPSInitializationTest {
         @Test
         @DisplayName("Test that a GPS is correctly initialized")
-        void testGPSInitialization() {
+        void coordinatesAreCorrectsAfterInitialization() {
             Position p = gps.getPosition();
             assertEquals(0,p.getX());
             assertEquals(0,p.getY());

@@ -15,8 +15,14 @@ class PositionTest {
     private static final Position p4 = new Position(2.999,4.001);
 
     @Nested
-    @DisplayName("Tests for the Position object")
-    class positionObjectTest {
+    @DisplayName("Test the Position object")
+    class positionInitializationTest {
+
+    }
+
+    @Nested
+    @DisplayName("Test the equivalent method")
+    class equivalentMethodTest {
         @Test
         @DisplayName("Test that two near enough positions are equivalent")
         void nearEnoughPositionsAreEquivalent(){
@@ -26,7 +32,7 @@ class PositionTest {
     }
 
     @Nested
-    @DisplayName("Tests for the distance method")
+    @DisplayName("Test the distance method")
     class distanceMethodTest {
         @Test
         @DisplayName("Test that the distance is commutative")
@@ -35,7 +41,7 @@ class PositionTest {
         }
 
         @Test
-        @DisplayName("Test that the distance value is calculated correctly")
+        @DisplayName("Test that the distance is calculated correctly")
         void distanceIsCalculatedCorrectly() {
             assertEquals(5, p2.distance(p1), 0.001);
             assertNotEquals(1, p3.distance(p4), 0.001);
