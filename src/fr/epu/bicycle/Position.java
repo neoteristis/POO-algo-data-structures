@@ -14,10 +14,6 @@ public class Position {
         this(0, 0);
     }
 
-    public boolean isEquivalent(Position p) {
-        return Math.abs(x-p.x)<EPSILON && Math.abs(y-p.y)< EPSILON;
-    }
-
     public double getX() {
         return x;
     }
@@ -34,15 +30,11 @@ public class Position {
         this.y = y;
     }
 
+    public boolean isEquivalent(Position p) {
+        return Math.abs(x-p.x)<EPSILON && Math.abs(y-p.y)< EPSILON;
+    }
+
     public double distance(Position p) {
         return Math.sqrt(Math.pow(p.y - this.y, 2) + Math.pow(p.x - this.x, 2));
-    }
-
-    public double projX() {
-        return this.x;
-    }
-
-    public double projY() {
-        return this.y;
     }
 }
