@@ -35,7 +35,7 @@ public class Position {
     }
 
     public double distance(Position p) {
-        return (this.y - p.y) / (this.x - p.x);
+        return Math.sqrt(Math.pow(p.y - this.y, 2) + Math.pow(p.x - this.x, 2));
     }
 
     public double projX() {
