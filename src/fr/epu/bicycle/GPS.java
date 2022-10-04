@@ -1,7 +1,7 @@
 package fr.epu.bicycle;
 
 public class GPS {
-    private Position position;
+    private final Position position;
 
     public GPS() {
         position = new Position();
