@@ -1,11 +1,11 @@
 package fr.epu.bicycle;
 
 public class Position {
-    private int x;
-    private int y;
+    private double x;
+    private double y;
     private static final double EPSILON = 000.1;
 
-    public Position(int x, int y) {
+    public Position(double x, double y) {
         this.x = x;
         this.y = y;
     }
@@ -18,19 +18,31 @@ public class Position {
         return Math.abs(x-p.x)<EPSILON && Math.abs(y-p.y)< EPSILON;
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
     }
 
-    public void setX(int x) {
+    public void setX(double x) {
         this.x = x;
     }
 
-    public void setY(int y) {
+    public void setY(double y) {
         this.y = y;
+    }
+
+    public double distance(Position p) {
+        return (this.y - p.y) / (this.x - p.x);
+    }
+
+    public double projX() {
+        return this.x;
+    }
+
+    public double projY() {
+        return this.y;
     }
 }

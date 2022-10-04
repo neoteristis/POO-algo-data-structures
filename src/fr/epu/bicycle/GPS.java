@@ -11,7 +11,7 @@ public class GPS {
         return this.position;
     }
 
-    public void move(int x, int y) {
+    public void move(double x, double y) {
         this.position.setX(x);
         this.position.setY(y);
     }
