@@ -28,4 +28,8 @@ public class Battery {
             this.charge = maxCharge;
         }
     }
+
+    public int getChargePercentage() {
+        return charge * 100 / maxCharge;
+    }
 }

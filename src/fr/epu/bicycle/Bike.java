@@ -2,7 +2,7 @@ package fr.epu.bicycle;
 
 import java.util.Optional;
 
-public class Bike implements Trackable,  Vehicle {
+public class Bike implements Trackable,  Vehicle, Borrowable {
     private Station station;
 
     public Bike(Station station) {
@@ -25,5 +25,9 @@ public class Bike implements Trackable,  Vehicle {
 
     public void joinStation(Station station) {
         this.station = station;
+    }
+
+    public boolean isBorrowable() {
+        return station != null;
     }
 }

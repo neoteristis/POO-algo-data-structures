@@ -2,11 +2,12 @@ package fr.epu.bicycle;
 
 import java.util.Optional;
 
-public class ElectricVehicle implements Trackable, Vehicle {
+public class ElectricVehicle implements Trackable, Vehicle, Borrowable {
     static final int INITIAL_CHARGE = 10;
     protected final GPS gps;
     protected final Battery battery;
     protected int km;
+    private boolean isBorrowed = false;
 
     public ElectricVehicle() {
         this.gps = new GPS();
@@ -43,5 +44,10 @@ public class ElectricVehicle implements Trackable, Vehicle {
         if (nbKmToAdd > 0) {
             this.km += nbKmToAdd;
         }
+    }
+
+    @Override
+    public boolean isBorrowable() {
+        return !isBorrowed && battery.getChargePercentage() >= 20;
     }
 }
