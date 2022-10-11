@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/raphaelanjou/Documents/CodingProjects/education/computer-science-year01/POO-algo-data-structures/src/fr/epu/bicycle</OriginalElement>
+  <nodes>
+    <node x="208.16666666666663" y="92.0">fr.epu.bicycle.Station</node>
+    <node x="234.1415929203538" y="280.0">fr.epu.bicycle.Bike</node>
+    <node x="346.64159292035373" y="92.0">fr.epu.bicycle.Borrowable</node>
+    <node x="422.59439528023574" y="176.0">fr.epu.bicycle.Vehicle</node>
+    <node x="329.6320058997046" y="364.0">fr.epu.bicycle.Unicycle</node>
+    <node x="79.63200589970464" y="364.0">fr.epu.bicycle.Scooter</node>
+    <node x="45.5" y="280.0">fr.epu.bicycle.ElectricVehicle</node>
+    <node x="59.0" y="176.0">fr.epu.bicycle.Battery</node>
+    <node x="72.15265486725622" y="0.0">fr.epu.bicycle.Position</node>
+    <node x="46.63200589970461" y="446.0">fr.epu.bicycle.Main</node>
+    <node x="479.39159292035373" y="446.0">fr.epu.bicycle.Fleet</node>
+    <node x="507.64159292035373" y="92.0">fr.epu.bicycle.Trackable</node>
+    <node x="0.0" y="92.0">fr.epu.bicycle.GPS</node>
+    <node x="213.63200589970464" y="364.0">fr.epu.bicycle.EBike</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="fr.epu.bicycle.Fleet" target="fr.epu.bicycle.Vehicle" relationship="DEPENDENCY">
+      <point x="22.75" y="-15.0" />
+      <point x="547.6415929203538" y="386.6336394174702" />
+      <point x="513.4277286135691" y="386.6336394174702" />
+      <point x="36.33333333333337" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Bike" target="fr.epu.bicycle.Position" relationship="DEPENDENCY">
+      <point x="-28.666666666666686" y="-15.0" />
+      <point x="248.4749262536871" y="228.0" />
+      <point x="326.66666666666663" y="228.0" />
+      <point x="326.66666666666663" y="51.0" />
+      <point x="167.98598820058956" y="51.0" />
+      <point x="38.33333333333334" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Fleet" target="fr.epu.bicycle.EBike" relationship="DEPENDENCY">
+      <point x="22.75" y="-15.0" />
+      <point x="547.6415929203538" y="425.0" />
+      <point x="285.6320058997046" y="425.0" />
+      <point x="24.0" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Bike" target="fr.epu.bicycle.Station" relationship="TO_ONE">
+      <point x="0.0" y="-15.0" />
+      <point x="277.1415929203538" y="201.0" />
+      <point x="289.16666666666663" y="201.0" />
+      <point x="27.0" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Unicycle" target="fr.epu.bicycle.ElectricVehicle" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="389.6320058997046" y="342.0" />
+      <point x="225.75" y="342.0" />
+      <point x="225.75" y="332.0" />
+      <point x="171.5" y="332.0" />
+      <point x="42.0" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Fleet" target="fr.epu.bicycle.Vehicle" relationship="TO_MANY">
+      <point x="-22.75" y="-15.0" />
+      <point x="502.14159292035373" y="425.0" />
+      <point x="477.09439528023574" y="425.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Fleet" target="fr.epu.bicycle.Position" relationship="DEPENDENCY">
+      <point x="22.75" y="-15.0" />
+      <point x="547.6415929203538" y="425.0" />
+      <point x="646.1415929203538" y="425.0" />
+      <point x="646.1415929203538" y="61.0" />
+      <point x="167.98598820058956" y="61.0" />
+      <point x="38.33333333333334" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Trackable" target="fr.epu.bicycle.Position" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.0" />
+      <point x="571.6415929203538" y="51.0" />
+      <point x="167.98598820058956" y="51.0" />
+      <point x="38.33333333333334" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.ElectricVehicle" target="fr.epu.bicycle.Battery" relationship="CREATE">
+      <point x="-21.0" y="-15.0" />
+      <point x="108.5" y="258.0" />
+      <point x="114.0" y="258.0" />
+      <point x="114.0" y="243.0" />
+      <point x="141.5" y="243.0" />
+      <point x="27.5" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.ElectricVehicle" target="fr.epu.bicycle.Battery" relationship="TO_ONE">
+      <point x="-63.0" y="-15.0" />
+      <point x="66.5" y="258.0" />
+      <point x="86.5" y="258.0" />
+      <point x="-27.5" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.ElectricVehicle" target="fr.epu.bicycle.Vehicle" relationship="REALIZATION">
+      <point x="63.0" y="-15.0" />
+      <point x="192.5" y="248.0" />
+      <point x="435.57015393414036" y="248.0" />
+      <point x="435.57015393414036" y="243.0" />
+      <point x="440.7610619469024" y="243.0" />
+      <point x="-36.33333333333337" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Vehicle" target="fr.epu.bicycle.Trackable" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="477.09439528023574" y="149.0" />
+      <point x="539.6415929203538" y="149.0" />
+      <point x="-32.0" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Main" target="fr.epu.bicycle.ElectricVehicle" relationship="DEPENDENCY">
+      <point x="-22.5" y="-15.0" />
+      <point x="69.13200589970461" y="342.0" />
+      <point x="87.5" y="342.0" />
+      <point x="-42.0" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Station" target="fr.epu.bicycle.Position" relationship="TO_ONE">
+      <point x="-27.0" y="-15.0" />
+      <point x="235.16666666666663" y="71.0" />
+      <point x="129.65265486725622" y="71.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Bike" target="fr.epu.bicycle.Vehicle" relationship="REALIZATION">
+      <point x="28.666666666666686" y="-15.0" />
+      <point x="305.8082595870205" y="248.0" />
+      <point x="434.78219947351454" y="248.0" />
+      <point x="434.78219947351454" y="243.0" />
+      <point x="440.7610619469024" y="243.0" />
+      <point x="-36.33333333333337" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.GPS" target="fr.epu.bicycle.Position" relationship="CREATE">
+      <point x="-21.5" y="-15.0" />
+      <point x="21.5" y="61.0" />
+      <point x="91.31932153392287" y="61.0" />
+      <point x="-38.33333333333334" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.ElectricVehicle" target="fr.epu.bicycle.GPS" relationship="CREATE">
+      <point x="-21.0" y="-15.0" />
+      <point x="108.5" y="258.0" />
+      <point x="102.23598820058956" y="258.0" />
+      <point x="102.23598820058956" y="243.0" />
+      <point x="43.0" y="243.0" />
+      <point x="43.0" y="149.0" />
+      <point x="64.5" y="149.0" />
+      <point x="21.5" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Vehicle" target="fr.epu.bicycle.Borrowable" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="477.09439528023574" y="149.0" />
+      <point x="417.14159292035373" y="149.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.GPS" target="fr.epu.bicycle.Position" relationship="TO_ONE">
+      <point x="21.5" y="-15.0" />
+      <point x="64.5" y="71.0" />
+      <point x="129.65265486725622" y="71.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.ElectricVehicle" target="fr.epu.bicycle.GPS" relationship="TO_ONE">
+      <point x="-63.0" y="-15.0" />
+      <point x="66.5" y="258.0" />
+      <point x="21.5" y="258.0" />
+      <point x="-21.5" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Station" target="fr.epu.bicycle.Position" relationship="DEPENDENCY">
+      <point x="27.0" y="-15.0" />
+      <point x="289.16666666666663" y="51.0" />
+      <point x="167.98598820058956" y="51.0" />
+      <point x="38.33333333333334" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.EBike" target="fr.epu.bicycle.ElectricVehicle" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="261.6320058997046" y="342.0" />
+      <point x="225.75" y="342.0" />
+      <point x="225.75" y="332.0" />
+      <point x="171.5" y="332.0" />
+      <point x="42.0" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Bike" target="fr.epu.bicycle.Station" relationship="DEPENDENCY">
+      <point x="-28.666666666666686" y="-15.0" />
+      <point x="248.4749262536871" y="228.0" />
+      <point x="235.16666666666663" y="228.0" />
+      <point x="-27.0" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Scooter" target="fr.epu.bicycle.ElectricVehicle" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="136.63200589970464" y="342.0" />
+      <point x="225.75" y="342.0" />
+      <point x="225.75" y="332.0" />
+      <point x="171.5" y="332.0" />
+      <point x="42.0" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.ElectricVehicle" target="fr.epu.bicycle.Position" relationship="DEPENDENCY">
+      <point x="21.0" y="-15.0" />
+      <point x="150.5" y="258.0" />
+      <point x="179.5" y="258.0" />
+      <point x="179.5" y="51.0" />
+      <point x="167.98598820058956" y="51.0" />
+      <point x="38.33333333333334" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Main" target="fr.epu.bicycle.EBike" relationship="CREATE">
+      <point x="22.5" y="-15.0" />
+      <point x="114.13200589970461" y="425.0" />
+      <point x="237.63200589970464" y="425.0" />
+      <point x="-24.0" y="15.0" />
+    </edge>
+    <edge source="fr.epu.bicycle.Fleet" target="fr.epu.bicycle.Trackable" relationship="DEPENDENCY">
+      <point x="22.75" y="-15.0" />
+      <point x="547.6415929203538" y="386.6336394174702" />
+      <point x="603.6415929203538" y="386.6336394174702" />
+      <point x="32.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.1195992203700569" showDependencies="true" x="319.55873651685545" y="249.43680902232143" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
