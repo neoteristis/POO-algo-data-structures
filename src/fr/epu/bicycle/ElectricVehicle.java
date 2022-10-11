@@ -2,7 +2,7 @@ package fr.epu.bicycle;
 
 import java.util.Optional;
 
-public class ElectricVehicle implements Trackable, Vehicle, Borrowable {
+public class ElectricVehicle implements Vehicle {
     static final int INITIAL_CHARGE = 10;
     protected final GPS gps;
     protected final Battery battery;
@@ -48,6 +48,6 @@ public class ElectricVehicle implements Trackable, Vehicle, Borrowable {
 
     @Override
     public boolean isBorrowable() {
-        return !isBorrowed && battery.getChargePercentage() >= 20;
+        return !isBorrowed && battery.getChargePercentage() >= 20.0;
     }
 }

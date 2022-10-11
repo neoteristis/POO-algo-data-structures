@@ -1,7 +1,5 @@
 package fr.epu.bicycle;
 
-import fr.epu.bicycle.EBike;
-
 import java.util.Locale;
 import java.util.Objects;
 import java.util.Scanner;
@@ -28,7 +26,7 @@ public class Main {
                 String input = keyboard.nextLine();// reading a double
 
                 String value = input.split(" ")[0];
-                String unit = input.split(" ")[1];
+                String unit = input.split(" ")[1].trim();
 
                 double newDistance;
                 if (Objects.equals(unit, "mi")) {

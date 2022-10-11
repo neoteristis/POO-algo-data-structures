@@ -1,4 +1,5 @@
 package fr.epu.bicycle;
 
-public interface Vehicle {
+public interface Vehicle extends Trackable, Borrowable {
+
 }

@@ -29,7 +29,7 @@ public class Battery {
         }
     }
 
-    public int getChargePercentage() {
-        return charge * 100 / maxCharge;
+    public double getChargePercentage() {
+        return ((double) charge * 100) / ((double) maxCharge);
     }
 }

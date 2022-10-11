@@ -1,6 +1,6 @@
 package fr.epu.bicycle;
 
-public class Unicycle implements Vehicle {
+public class Unicycle extends ElectricVehicle {
     public Unicycle() {
         super();
     }

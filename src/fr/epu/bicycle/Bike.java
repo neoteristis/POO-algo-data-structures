@@ -2,7 +2,7 @@ package fr.epu.bicycle;
 
 import java.util.Optional;
 
-public class Bike implements Trackable,  Vehicle, Borrowable {
+public class Bike implements Vehicle {
     private Station station;
 
     public Bike(Station station) {
@@ -12,11 +12,7 @@ public class Bike implements Trackable,  Vehicle, Borrowable {
 
     @Override
     public Optional<Position> getPosition() {
-        Optional<Position> position = Optional.empty();
-        if (station != null) {
-            position = Optional.of(station.getPosition());
-        }
-        return position;
+        return Optional.ofNullable(station.getPosition());
     }
 
     public void leaveStation() {
