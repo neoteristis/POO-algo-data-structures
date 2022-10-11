@@ -6,7 +6,7 @@ public class ElectricVehicle implements Trackable, Vehicle, Borrowable {
     static final int INITIAL_CHARGE = 10;
     protected final GPS gps;
     protected final Battery battery;
-    protected int km;
+    protected double km;
     private boolean isBorrowed = false;
 
     public ElectricVehicle() {
@@ -31,7 +31,7 @@ public class ElectricVehicle implements Trackable, Vehicle, Borrowable {
      *
      * @return kilometers as an int
      */
-    public int getKm() {
+    public double getKm() {
         return km;
     }
 
@@ -40,7 +40,7 @@ public class ElectricVehicle implements Trackable, Vehicle, Borrowable {
      *
      * @param nbKmToAdd
      */
-    public void addKm(int nbKmToAdd) {
+    public void addKm(double nbKmToAdd) {
         if (nbKmToAdd > 0) {
             this.km += nbKmToAdd;
         }
