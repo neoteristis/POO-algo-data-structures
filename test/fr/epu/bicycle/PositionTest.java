@@ -60,10 +60,20 @@ class PositionTest {
         @Test
         @DisplayName("Test that two near enough positions are equivalent")
         void equivalent_whenTwoPositionsAreNearEnough_true(){
+            Position pointLimitCase01 = new Position(1, 1);
+            Position pointLimitCase02 = new Position(1 + Position.EPSILON, 1 + Position.EPSILON);
+            Position pointLimitCase03 = new Position(1 + Position.EPSILON * 2, 1 + Position.EPSILON * 2);
+
             // Near enough positions
             assertTrue(p3.isEquivalent(p4));
+            assertTrue(p1.isEquivalent(p1));
+            assertTrue(pointLimitCase01.isEquivalent(pointLimitCase02));
+
             // Not near enough positions
             assertFalse(p1.isEquivalent(p2));
+            assertFalse(p2.isEquivalent(p3));
+            assertFalse(p1.isEquivalent(p4));
+            assertFalse(pointLimitCase01.isEquivalent(pointLimitCase03));
         }
     }
 

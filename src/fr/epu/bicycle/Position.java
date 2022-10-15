@@ -1,9 +1,12 @@
 package fr.epu.bicycle;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Position {
     private double x;
     private double y;
-    private static final double EPSILON = 000.1;
+    public static final double EPSILON = 0.001;
 
     /**
      * Constructor of the Position Class.
@@ -66,7 +69,11 @@ public class Position {
      * @return a boolean
      */
     public boolean isEquivalent(Position p) {
-        return Math.abs(x-p.x)<EPSILON && Math.abs(y-p.y)< EPSILON;
+        BigDecimal xDifference = BigDecimal.valueOf(Math.abs(x - p.x)).setScale(4, RoundingMode.CEILING);
+        BigDecimal yDifference = BigDecimal.valueOf(Math.abs(y - p.y)).setScale(4, RoundingMode.CEILING);
+        BigDecimal epsilon = BigDecimal.valueOf(EPSILON);
+
+        return xDifference.compareTo(epsilon) <= 0 && yDifference.compareTo(epsilon) <= 0;
     }
 
     /**
