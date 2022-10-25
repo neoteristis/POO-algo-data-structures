@@ -3,6 +3,7 @@ package fr.epu.bicycle;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static double kmToMiles(double km) {
@@ -13,7 +14,25 @@ public class Main {
         return miles * 1.609344;
     }
 
+    static void evaluateTime4around(){
+        Fleet oneFleet = new Fleet();
+        long totalTime =0;
+        Position currentPosition = new Position(7, 7);
+        for (int i = 0; i<1000; i++) {
+            long startTime = System.nanoTime();
+            oneFleet.around(currentPosition, 10);
+            long endTime = System.nanoTime();
+            long durationInNano = (endTime - startTime);  //Total execution time in nano seconds
+            totalTime += durationInNano;
+        }
+        System.out.println("total time in nano : " + totalTime);
+        System.out.println("total time in milli : " + TimeUnit.NANOSECONDS.toMillis(totalTime));
+    }
+
     public static void main(String[] args) {
+
+        evaluateTime4around();
+
         EBike e1= new EBike();
         final String STOP = "s";
         String stop = "f";

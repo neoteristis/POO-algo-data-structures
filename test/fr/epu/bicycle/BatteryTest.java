@@ -19,8 +19,8 @@ class BatteryTest {
     }
 
     @Nested
-    @DisplayName("Tests the initialization")
-    class batteryInitializationTest {
+    @DisplayName("constructor method")
+    class ConstructorMethodTest {
         @Test
         @DisplayName("Test that the charge is initialized correctly")
         void testBatteryChargeValueAfterInitialization() {
@@ -38,11 +38,23 @@ class BatteryTest {
 
             assertEquals(exception.getMessage(), expectedException);
         }
+
+        @Test
+        @DisplayName("when maxCharge is 0")
+        void constructor_whenMaxChargeIsZero_thenThrowException() {
+            Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+                battery = new Battery(0);
+            });
+
+            String expectedException = "input must be a strictly positive integer";
+
+            assertEquals(exception.getMessage(), expectedException);
+        }
     }
 
     @Nested
-    @DisplayName("Tests for the charge method")
-    class chargeMethodTest {
+    @DisplayName("charge method")
+    class ChargeMethodTest {
         @Test
         @DisplayName("Test charging with a positive integer")
         void testChargingWithPositiveInteger() {
@@ -65,12 +77,38 @@ class BatteryTest {
         }
 
         @Test
+        @DisplayName("charging with 0")
+        void charge_whenInputIsZero_thenNothingHappen() {
+            Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+                battery.charge(0);
+            });
+
+            String expectedException = "input must be a positive integer";
+
+            assertEquals(exception.getMessage(), expectedException);
+        }
+
+        @Test
         @DisplayName("Test that charging above the max is not possible")
         void testChargingAboveTheMax() {
             battery.charge(MAX_CHARGE + 1);
             assertEquals(MAX_CHARGE, battery.getCharge());
             battery.charge(MAX_CHARGE);
             assertEquals(MAX_CHARGE, battery.getCharge());
+        }
+    }
+
+    @Nested
+    @DisplayName("getChargePercentage method")
+    class getChargePercentageTest {
+        @Test
+        @DisplayName("when called return correct percentage")
+        void getChargePercentage_whenCalled_returnCorrectPercentage() {
+            assertEquals(0.0, battery.getChargePercentage());
+            battery.charge(MAX_CHARGE / 2);
+            assertEquals(50.0, battery.getChargePercentage());
+            battery.charge(MAX_CHARGE / 2);
+            assertEquals(100.0, battery.getChargePercentage());
         }
     }
 }

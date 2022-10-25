@@ -6,10 +6,11 @@ public class Battery {
 
     public Battery(int maxCharge) {
         this.charge = 0;
-        if (maxCharge > 0) {
-            this.maxCharge = maxCharge;
-        } else {
+        if (maxCharge <= 0){
             throw new IllegalArgumentException("input must be a strictly positive integer");
+        }
+        else {
+            this.maxCharge = maxCharge;
         }
     }
 
@@ -18,18 +19,17 @@ public class Battery {
     }
 
     public void charge(int chargeToAdd) {
-        if (chargeToAdd < 0) {
+        if  (chargeToAdd <= 0) {
             throw new IllegalArgumentException("input must be a positive integer");
-        }
-
-        this.charge += chargeToAdd;
-
-        if (this.charge > maxCharge) {
-            this.charge = maxCharge;
+        } else {
+            this.charge += chargeToAdd;
+            if (this.charge > maxCharge) {
+                this.charge = maxCharge;
+            }
         }
     }
 
     public double getChargePercentage() {
-        return ((double) charge * 100) / ((double) maxCharge);
+        return ((double) charge * 100) / (maxCharge);
     }
 }
